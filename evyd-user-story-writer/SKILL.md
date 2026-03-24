@@ -1,0 +1,83 @@
+---
+name: evyd-user-story-writer
+description: |-
+  Write structured User Story documents with Acceptance Criteria from product requirements.
+  Use when writing user stories, decomposing features into stories, or creating sprint backlog items.
+  Use proactively when user mentions a new feature, requirement detail, or asks to write/improve user stories.
+
+  Examples:
+  - user: "帮我写权限管理的 User Story" → clarify [Platform][System][Module] then generate story
+  - user: "这个需求帮我拆成几个 User Story" → split into separate independent stories each with AC
+  - user: "Write a user story for the login feature" → generate with Given-When-Then-And AC
+  - user: "我有个新功能想法" → guide through requirement clarification then write story
+  - user: "User Story 的 AC 帮我补全" → generate ≥5 Given-When-Then scenarios covering all paths
+---
+
+# User Story Writer
+
+Write high-quality User Story documents. Apply senior product manager judgment — healthcare internet industry context.
+
+## Step 1: Clarify Requirements
+
+If the requirement is not specific enough, ask clarifying questions **in Chinese**. Collect:
+
+- `[Platform]` — e.g., App, Web, Admin Portal
+- `[System]` — e.g., Routines, Health Records, Permissions
+- `[Module]` — e.g., Logging, Assignment, Notifications
+- Requirement detail — target user, goal, core functionality
+
+Skip this step if the user has already provided sufficient detail.
+
+## Step 2: Writing Guidelines
+
+Apply these perspectives when generating or refining stories:
+
+- **Healthcare management**: health data analysis, adherence tracking, health goal achievement
+- **IT implementation**: system functionality, user interface, technical implementation
+- **User experience**: usability, notification effectiveness, personalisation options
+- **User Interface**: parameters, buttons, clicking/jumping logic
+
+## Step 3: Story Separation Rule
+
+Separate different functionalities into **individual user stories**. Each story MUST:
+
+- Focus on a single, cohesive capability that delivers specific value
+- Be independently implementable and testable
+- Address one clear user need or functionality
+- Have its own title, description, and acceptance criteria
+
+## Output Format
+
+Output in **English with markdown** regardless of the input language.
+
+### Available Templates
+
+| Template | When to Use |
+|----------|-------------|
+| @EVYD-User-Story-Template.md | Default — EVYD platform, healthcare context |
+
+### Mandatory Template Compliance (Do Not Skip)
+
+When using a template:
+1) **Open and follow the template file verbatim** (read it from the skill folder) before drafting.
+2) **Render every required section heading** in the final output (do not omit sections such as **Figma Section Link(s)**).
+3) Keep placeholders exactly as the template specifies (e.g., `N/A _(Remove if Applicable)_`).
+4) If splitting into multiple stories, **each story must be a full template instance** (Title + Description + Figma links + Acceptance Criteria).
+
+### Mandatory Delivery Mode (Feishu Cloud Doc)
+
+If the user requests writing the output to Feishu Drive / Cloud Docs:
+1) **Create a new docx in the specified folder**.
+2) To avoid the “empty document” pitfall: **do not write a huge payload in one shot**. Use a safe sequence:
+   - `feishu_doc.create` → doc_token
+   - `feishu_doc.write` a short header stub (confirm success)
+   - `feishu_doc.append` in chunks (e.g., per story)
+   - `feishu_doc.read` to verify the document is non-empty
+3) **File naming** must follow the user’s convention: `For [user] - [Type] - [Title] - [YYYYMMDD]` (or a timestamp format the user specifies).
+
+Select the appropriate template based on user context or explicit request. Default to EVYD format unless the user specifies otherwise.
+
+## Workspace Notes
+
+- Use the current workspace's Feishu defaults from `TOOLS.md` when a destination folder is needed.
+- Do not hardcode user open_id or personal document links in this skill.
