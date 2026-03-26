@@ -64,20 +64,11 @@ When using a template:
 3) Keep placeholders exactly as the template specifies (e.g., `N/A _(Remove if Applicable)_`).
 4) If splitting into multiple stories, **each story must be a full template instance** (Title + Description + Figma links + Acceptance Criteria).
 
-### Mandatory Delivery Mode (Feishu Cloud Doc)
+### Output Channel
 
-If the user requests writing the output to Feishu Drive / Cloud Docs:
-1) **Create a new docx in the specified folder**.
-2) To avoid the “empty document” pitfall: **do not write a huge payload in one shot**. Use a safe sequence:
-   - `feishu_doc.create` → doc_token
-   - `feishu_doc.write` a short header stub (confirm success)
-   - `feishu_doc.append` in chunks (e.g., per story)
-   - `feishu_doc.read` to verify the document is non-empty
-3) **File naming** must follow the user’s convention: `For [user] - [Type] - [Title] - [YYYYMMDD]` (or a timestamp format the user specifies).
+When the user requests writing output to a doc / cloud storage, read `../OUTPUT_CHANNELS.md` for the active channel’s write protocol, format constraints, and naming convention.
+
+- File type: `「UserStory」`
+- Default folder: ask the user if not specified
 
 Select the appropriate template based on user context or explicit request. Default to EVYD format unless the user specifies otherwise.
-
-## Workspace Notes
-
-- Use the current workspace's Feishu defaults from `TOOLS.md` when a destination folder is needed.
-- Do not hardcode user open_id or personal document links in this skill.

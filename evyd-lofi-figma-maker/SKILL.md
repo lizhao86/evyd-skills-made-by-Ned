@@ -85,20 +85,21 @@ Separate each prompt with `---`. After all prompts, add a **Screens Overview** t
 |----------|-------------|
 | @Figma-Make-Prompt-Template.md | Default — Figma Make (Figma official AI), LoFi wireframes |
 
-## Mandatory Delivery Mode (Feishu Cloud Doc)
+## Output Channel
 
-If the user requests writing the output to Feishu Drive / Cloud Docs:
-1) **Create a new docx in the specified folder**.
-2) To avoid the “empty document” pitfall: **do not write a huge payload in one shot**. Use a safe sequence:
-   - `feishu_doc.create` → doc_token
-   - `feishu_doc.write` a short header stub (confirm success)
-   - `feishu_doc.append` in chunks (e.g., one prompt block per screen)
-   - `feishu_doc.read` to verify the document is non-empty
-3) **File naming** must follow the user’s convention: `For [user] - [Type] - [Title] - [YYYYMMDD]` (or a timestamp format the user specifies).
-4) When writing multiple prompts, prefer this document structure:
-   - `# [Feature / Story Name]`
-   - `## Prompt 1: [Screen Name]`
-   - short note: `Maps to: [AC scenario / screen state]`
-   - prompt body in plain text block
-   - repeat for Prompt 2 / Prompt 3 if needed
-5) If a single `append` fails, retry with shorter chunks, but **preserve structure**. Do not collapse everything into one long paragraph.
+When the user requests writing output to a doc / cloud storage, read `../OUTPUT_CHANNELS.md` for the active channel’s write protocol, format constraints, and naming convention.
+
+- File type: `「LoFi」`
+- Default folder: ask the user if not specified
+
+### Document Structure (skill-specific, apply after channel protocol)
+
+When writing multiple prompts, always use this structure regardless of channel:
+
+- `# [Feature / Story Name]`
+- `## Prompt 1: [Screen Name]`
+- short note: `Maps to: [AC scenario / screen state]`
+- prompt body in plain text block
+- repeat for Prompt 2 / Prompt 3 if needed
+
+Do not collapse multiple prompts into one long paragraph.

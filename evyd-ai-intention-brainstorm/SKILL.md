@@ -6,9 +6,9 @@ description: |-
   Use proactively when user describes a Medical AI product concept and needs to explore what the AI should handle.
 
   Examples:
-  - user: "App 内的 AI 用药助手，面向患者，中文，提供安全用药评估和处方解读。禁止：修改处方、推荐处方药" → parse concept + hard rules, generate IS/HOOS/SOOS + risk levels + audit process
-  - user: "医生端 Console 的 AI 问诊转录助手，面向医生，中文，实时语音转文字 + 结构化 + 情绪/危险信号识别，输出结构化记录" → map intents, define soft boundaries around clinical interpretation, output shared process
-  - user: "Patient-facing health coaching AI, English (AU), mobile app. Absolute rule: never diagnose." → generate scope doc with all 3 layers + risk classification
+  - user: "App 内的 AI 用药助手，面向患者，中文，提供安全用药评估和处方解读。禁止：修改处方、推荐处方药" → parse concept + hard rules, generate Use Case Overview + IS/HOOS/SOOS + Missing Intent Suggestions
+  - user: "医生端 Console 的 AI 问诊转录助手，面向医生，中文，实时语音转文字 + 结构化 + 情绪/危险信号识别，输出结构化记录" → generate Use Case Overview + IS/HOOS/SOOS + Missing Intent Suggestions
+  - user: "Patient-facing health coaching AI, English (AU), mobile app. Absolute rule: never diagnose." → generate Use Case Overview + IS/HOOS/SOOS with hard prohibition in HOOS + Missing Intent Suggestions
   - user: "帮我把这个想法的边界定义好，哪些 AI 能答，哪些要拒绝" → clarify target user + channel if missing, then generate full document
 ---
 
@@ -20,8 +20,9 @@ Transform product concepts into structured **Intent & Scope Definition documents
 
 ## Rules
 
-- **Rule 1**: Always reply in British English.
+- **Rule 1**: Always reply in British English, unless the product concept is in another language — in which case, match that language for Sections 1–4. Section 5 (Appendix) is always in English.
 - **Rule 2**: Keep context simple — avoid jargon unless it is medically necessary.
+- **Rule 3**: Output requirements definition and scope boundaries only. Do not generate implementation details, process flows, or actual medical content.
 
 ## Step 1: Silent Input Analysis
 
@@ -90,12 +91,11 @@ Suggest up to 5 high-value intents not covered in the original request. For each
 - **Rationale** — why this is worth adding
 - **Example User Questions** (2–3 examples)
 
-Always reply in English for this section.
-
 ---
 
-## Available Templates
+## Output Channel
 
-| Template | When to Use |
-|----------|-------------|
-| @Scope-Layer-Templates.md | All three scope layers — column specs, instructions, and examples |
+When the user requests writing output to a doc / cloud storage, read `../OUTPUT_CHANNELS.md` for the active channel's write protocol, format constraints, and naming convention.
+
+- File type: `「IntentSpec」`
+- Default folder: ask the user if not specified

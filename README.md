@@ -125,6 +125,7 @@
 ```
 技能 skills 作坊/
 ├── README.md
+├── OUTPUT_CHANNELS.md              # 共享输出渠道配置（飞书/Obsidian/本地）
 ├── evyd-ai-intention-brainstorm/   # 医疗 AI 意图架构师
 │   ├── SKILL.md
 │   └── Scope-Layer-Templates.md
@@ -141,10 +142,30 @@
     └── EVYD-User-Story-Template.md
 ```
 
+## 输出渠道
+
+所有技能共用根目录的 `OUTPUT_CHANNELS.md` 管理输出渠道，**改一行即可全局切换**：
+
+```
+active: feishu        # 默认：飞书云文档
+active: obsidian      # 切换为本地 Obsidian vault
+active: local-markdown  # 切换为本地 Markdown 文件
+```
+
+切换到非飞书渠道时，在 `OUTPUT_CHANNELS.md` 对应章节填入本地路径（`obsidian_vault_path` 或 `local_output_path`）即可，**无需修改任何 SKILL.md**。
+
+各渠道差异：
+
+| | 飞书 | Obsidian | local-markdown |
+|---|---|---|---|
+| 支持表格 | ❌ | ✅ | ✅ |
+| 写入方式 | create → read → write（防空文档） | 一次性写入 | 一次性写入 |
+| 需配置项 | 各 skill 声明 `folder_token` | `obsidian_vault_path` | `local_output_path` |
+
 ## 技术栈
 
 - **框架**：[Claude Code Skills](https://docs.anthropic.com/en/docs/claude-code/skills)
-- **输出集成**：飞书云文档（Feishu Cloud Docs）
+- **输出集成**：可配置（默认飞书云文档，支持 Obsidian / 本地 Markdown）
 
 ## 使用方式
 

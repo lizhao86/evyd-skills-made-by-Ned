@@ -56,18 +56,8 @@ description: |-
 4. 等待全部完成，合并输出 + 生成 Normalized Summary
 5. 读取 `references/report-template.md` 获取文档结构模板
 6. 读取 `references/taxonomy.md` 确定 System/Module 归类
-7. 使用 `feishu_doc` 输出飞书文档，目标文件夹 `G1tGfI3wFldgE3d2JKscrj1InHc`
+7. 按 `../OUTPUT_CHANNELS.md` 中 active channel 的协议输出文档，目标文件夹 `G1tGfI3wFldgE3d2JKscrj1InHc`
    - 文件名：`For {User昵称} - 👊「Research」{System} - {Company_ProductName} - {Module} {date}`
-   - **强制写入协议（必须执行）**：
-     1) 先 `create` 仅创建文档壳，不依赖 `create.content` 承载正文
-     2) 立即 `read` 新文档，确认不是只有标题
-     3) 用 `write` 全量覆盖正文
-     4) 若 `write` 后仍异常，再拆成更短的结构化内容重写
-   - **正文格式规则（必须执行）**：
-     - 只用标题、短段落、bullet list
-     - 禁止 Markdown 表格
-     - 避免复杂嵌套和超长连续段落
-     - 优先“一级标题 → 二级标题 → bullet list”结构
 8. 进入追问模式：读取 `references/followup-prompt.md`，生成 3 个深挖问题
 
 ### 文件名示例
@@ -89,17 +79,8 @@ description: |-
 2. 逐个读取，提取 Normalized Summary + Evidence Table + Links
 3. 读取 `references/landscape-prompt.md` 获取全景分析输出模板
 4. 综合生成全景报告
-5. 使用 `feishu_doc` 输出飞书文档
+5. 按 `../OUTPUT_CHANNELS.md` 中 active channel 的协议输出文档
    - 文件名：`For {User昵称} - 👊「Landscape」{System} - 全景分析 - {date}`
-   - **强制写入协议（必须执行）**：
-     1) 先 `create` 创建文档壳
-     2) 再 `read` 校验首写结果
-     3) 再 `write` 全量覆盖正文
-     4) 若失败，拆成更短的分段正文重写
-   - **正文格式规则（必须执行）**：
-     - 只用标题、短段落、bullet list
-     - 禁止 Markdown 表格
-     - 避免复杂嵌套和超长连续段落
 
 ---
 

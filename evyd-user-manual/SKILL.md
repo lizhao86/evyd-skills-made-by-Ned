@@ -92,14 +92,10 @@ Group related steps into a single task section. If the AC has multiple Happy Pat
 
 Ask the user: *"Does this look right? Let me know if any UI labels, steps, or troubleshooting items need updating."*
 
-## Mandatory Delivery Mode (Feishu Cloud Doc)
+## Output Channel
 
-If the user requests writing the output to Feishu Drive / Cloud Docs:
-1) **Create a new docx in the specified folder**.
-2) To avoid the “empty document” pitfall: **do not write a huge payload in one shot**. Use a safe sequence:
-   - `feishu_doc.create` → doc_token
-   - `feishu_doc.write` a short header stub (confirm success)
-   - `feishu_doc.append` in chunks (e.g., per manual section)
-   - `feishu_doc.read` to verify the document is non-empty
-3) **File naming** must follow the user’s convention: `For [user] - [Type] - [Title] - [YYYYMMDD]` (or a timestamp format the user specifies).
+When the user requests writing output to a doc / cloud storage, read `../OUTPUT_CHANNELS.md` for the active channel’s write protocol, format constraints, and naming convention.
+
+- File type: `「Manual」`
+- Default folder: ask the user if not specified
 
