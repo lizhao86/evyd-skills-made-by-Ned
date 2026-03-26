@@ -125,7 +125,7 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 
 ### 6. PD 路线图作业台 (PD Roadmap Workbench)
 
-**目录**：`public/evyd-pd-roadmap/`
+**目录**：`evyd-pd-roadmap/`
 
 围绕 EVYD PD roadmap 的多维表维护与导出工作流技能。不是泛用 JSON 转换器，而是专门服务于：
 - 路线图想法收集与写入
@@ -248,11 +248,10 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 ├── evyd-user-story-writer/         # 用户故事编写器
 │   ├── SKILL.md
 │   └── EVYD-User-Story-Template.md
-├── public/
-│   └── evyd-pd-roadmap/            # PD 路线图作业台
-│       ├── SKILL.md
-│       ├── references/
-│       └── scripts/
+├── evyd-pd-roadmap/               # PD 路线图作业台
+│   ├── SKILL.md
+│   ├── references/
+│   └── scripts/
 ├── ned-daily-working-report/       # 每日工作报告生成器（个人）
 │   ├── SKILL.md
 │   ├── assets/template.md
