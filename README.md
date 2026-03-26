@@ -6,7 +6,9 @@
 
 ## 项目简介
 
-本项目整合了产品开发流程中最耗时的五个环节，让产品经理、设计师和工程师通过 AI 快速生成高质量的工作产出：
+本项目整合了产品开发流程中最耗时的几个环节，让产品经理、设计师和工程师通过 AI 快速生成高质量工作产出。
+
+团队工具主链路：
 
 ```
 市场/竞品 → 竞品调研报告（飞书）
@@ -15,6 +17,7 @@
                               ↓
                         User Manual（用户手册）
 医疗 AI 概念 → 意图分类 → 范围边界规范
+产品路线图想法 → 飞书多维表沉淀 → 重复检查 → startMonth 排期 → JSON 导出
 ```
 
 个人效率工具（独立使用）：
@@ -120,11 +123,49 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 
 ---
 
+### 6. PD 路线图作业台 (PD Roadmap Workbench)
+
+**目录**：`public/evyd-pd-roadmap/`
+
+围绕 EVYD PD roadmap 的多维表维护与导出工作流技能。不是泛用 JSON 转换器，而是专门服务于：
+- 路线图想法收集与写入
+- 重复项检查
+- 字段补全（Problem / Function / Value / Resource）
+- `startMonth` 排期
+- 固定 JSON 导出
+
+**适用场景**：
+- PM/产品负责人在对话中发散需求，再沉淀进飞书多维表
+- 对路线图条目做去重与人工决策
+- 为下游 roadmap 呈现系统导出固定 JSON
+
+**模块化能力**：
+- **Collect + Write**：对话收集场景，并写回指定 Feishu Bitable
+- **Duplicate Check**：检查重复/近重复条目，要求人工判断保留、更新或合并
+- **JSON Export**：按固定 schema 导出 JSON
+- **Future Export Placeholder**：为 Excel / narrative doc 等后续导出方式预留占位
+
+**已内置辅助脚本**：
+- `scripts/export_json.py` — 将本地 records JSON 转换为固定 roadmap export JSON
+- `scripts/detect_duplicates.py` — 做候选重复项扫描（辅助判定，不自动裁决）
+
+**核心文件**：
+- `SKILL.md` — 主流程与模块入口
+- `references/schema.md` — Bitable 字段规范、映射规则、Resource 映射、startMonth 规划 canon
+- `references/collection-write.md`
+- `references/dedup-check.md`
+- `references/export-json.md`
+- `references/export-placeholders.md`
+- `scripts/export_json.py`
+- `scripts/detect_duplicates.py`
+
+---
+
 ### ned- 系列（个人效率工具）
 
 > 以下技能绑定 Ned 的 Obsidian 本地知识库路径，不适用于其他用户直接使用。
 
-#### 6. 每日工作报告生成器 (Daily Working Report)
+#### 7. 每日工作报告生成器 (Daily Working Report)
 
 **目录**：`ned-daily-working-report/`
 
@@ -145,7 +186,7 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 
 ---
 
-#### 7. 每周工作报告生成器 (Weekly Report)
+#### 8. 每周工作报告生成器 (Weekly Report)
 
 **目录**：`ned-weekly-report/`
 
@@ -183,6 +224,7 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 6. 进入视觉设计和开发阶段
 
 [医疗 AI 意图架构师] — 独立使用，AI 产品规划阶段
+[PD 路线图作业台] — 独立使用，路线图维护 / 去重 / 排期 / JSON 导出
 ```
 
 ## 项目结构
@@ -206,6 +248,11 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 ├── evyd-user-story-writer/         # 用户故事编写器
 │   ├── SKILL.md
 │   └── EVYD-User-Story-Template.md
+├── public/
+│   └── evyd-pd-roadmap/            # PD 路线图作业台
+│       ├── SKILL.md
+│       ├── references/
+│       └── scripts/
 ├── ned-daily-working-report/       # 每日工作报告生成器（个人）
 │   ├── SKILL.md
 │   ├── assets/template.md
@@ -218,28 +265,21 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 
 ## 输出渠道
 
-所有技能共用根目录的 `OUTPUT_CHANNELS.md` 管理输出渠道，**改一行即可全局切换**：
+所有技能共用根目录的 `OUTPUT_CHANNELS.md` 管理输出渠道，**改一行即可全局切换**。
 
-```
-active: feishu        # 默认：飞书云文档
-active: obsidian      # 切换为本地 Obsidian vault
-active: local-markdown  # 切换为本地 Markdown 文件
-```
+`evyd-pd-roadmap` 当前与 `OUTPUT_CHANNELS.md` 的关系是：
+- **已结合**：它遵循共享的输出通道理念（本地文件 / 飞书 / 聊天附件 fallback）
+- **但不强绑定**：因为它目前主交付物是 `.json` 文件，而根目录 `OUTPUT_CHANNELS.md` 更偏向 Markdown / Feishu Doc 类文本输出协议
 
-切换到非飞书渠道时，在 `OUTPUT_CHANNELS.md` 对应章节填入本地路径（`obsidian_vault_path` 或 `local_output_path`）即可，**无需修改任何 SKILL.md**。
-
-各渠道差异：
-
-| | 飞书 | Obsidian | local-markdown |
-|---|---|---|---|
-| 支持表格 | ❌ | ✅ | ✅ |
-| 写入方式 | create → read → write（防空文档） | 一次性写入 | 一次性写入 |
-| 需配置项 | 各 skill 声明 `folder_token` | `obsidian_vault_path` | `local_output_path` |
+所以当前策略是：
+- 继续**引用全局输出理念**
+- 不强行把 JSON 导出塞进文档写入协议
+- 当飞书云盘上传工具不稳定时，优先走**聊天附件 fallback**
 
 ## 技术栈
 
 - **框架**：[Claude Code Skills](https://docs.anthropic.com/en/docs/claude-code/skills)
-- **输出集成**：可配置（默认飞书云文档，支持 Obsidian / 本地 Markdown）
+- **输出集成**：可配置（默认飞书云文档，支持 Obsidian / 本地 Markdown / 聊天附件 fallback）
 
 ## 使用方式
 
