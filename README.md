@@ -17,7 +17,7 @@
                               ↓
                         User Manual（用户手册）
 医疗 AI 概念 → 意图分类 → 范围边界规范
-产品路线图想法 → 飞书多维表沉淀 → 重复检查 → startMonth 排期 → JSON 导出
+产品路线图想法 → 飞书多维表沉淀 → 重复检查 → startMonth 排期
 ```
 
 个人效率工具（独立使用）：
@@ -127,17 +127,15 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 
 **目录**：`evyd-pd-roadmap/`
 
-围绕 EVYD PD roadmap 的多维表维护与导出工作流技能。不是泛用 JSON 转换器，而是专门服务于：
+围绕 EVYD PD roadmap 的多维表维护工作流技能，专门服务于：
 - 路线图想法收集与写入
 - 重复项检查
 - 字段补全（Problem / Function / Value / Resource）
 - `startMonth` 排期
-- 固定 JSON 导出
 
 **适用场景**：
 - PM/产品负责人在对话中发散需求，再沉淀进飞书多维表
 - 对路线图条目做去重与人工决策
-- 为下游 roadmap 呈现系统导出固定 JSON
 
 **模块化能力**：
 - **Collect + Write**：对话收集场景，并写回指定 Feishu Bitable
@@ -152,6 +150,22 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 - `references/collection-write.md`
 - `references/dedup-check.md`
 - `scripts/detect_duplicates.py`
+
+---
+
+---
+
+### 7. 输出渠道配置 (Output Channels)
+
+**目录**：`evyd-output-channels/`
+
+所有 evyd- 技能共用的输出渠道配置与协议。在 `SKILL.md` 顶部改两行 YAML 即可全局切换输出方式。
+
+**支持渠道**：
+- **feishu + lark-cli**：本地 Claude Code CLI 通过 lark-cli 写入飞书云文档
+- **feishu + openclaw**：通过飞书机器人调用 OpenClaw 写入（待接入）
+- **obsidian + local-fs**：写入本地 Obsidian vault，支持模板映射
+- **local-markdown + local-fs**：写入本地桌面 Markdown 文件
 
 ---
 
@@ -218,7 +232,7 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 6. 进入视觉设计和开发阶段
 
 [医疗 AI 意图架构师] — 独立使用，AI 产品规划阶段
-[PD 路线图作业台] — 独立使用，路线图维护 / 去重 / 排期 / JSON 导出
+[PD 路线图作业台] — 独立使用，路线图维护 / 去重 / 排期
 ```
 
 ## 项目结构
