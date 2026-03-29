@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "title":    "BruAI Focus Group v3",
+    "style":    "evyd_blue",
+    "template": "/Users/Li.ZHAO/Documents/EVYD PPT Template Aptos.pptx",
+    "output":   "/Users/Li.ZHAO/Desktop/MOH_BruAI_FocusGroup_v3.pptx"
+  },
+  "slides": [
+
+    {
+      "type":     "cover",
+      "title":    "BruAI: AI Medication Assistant",
+      "subtitle": "Focus Group Session  ·  Ministry of Health, Brunei Darussalam  ·  7 April 2026"
+    },
+
+    {
+      "type": "agenda",
+      "items": [
+        { "num": "1", "title": "Introduction & Consent",          "time": "10:00–10:10  ·  10 min" },
+        { "num": "2", "title": "App Overview & AI Briefing",       "time": "10:10–10:20  ·  10 min" },
+        { "num": "3", "title": "Scenario-Based Tasks",             "time": "10:20–11:00  ·  40 min" },
+        { "num": "4", "title": "Discussion & Feedback",            "time": "11:00–11:20  ·  20 min" },
+        { "num": "5", "title": "Survey & Wrap-Up",                 "time": "11:20–11:35  ·  15 min" }
+      ]
+    },
+
+    {
+      "type":     "section_divider",
+      "num":      "01",
+      "title":    "Session Overview",
+      "bg_color": [4, 42, 28]
+    },
+
+    {
+      "type":       "bullets_with_panel",
+      "section":    "01 — Welcome",
+      "title":      "Welcome & Introductions",
+      "background": "blue",
+      "bullets": [
+        "Welcome to the MOH POC Focus Group — evaluating BruAI, MOH's AI medication assistant in BruHealth.",
+        "Moderators from EVYD are present to observe the system, not to evaluate you personally.",
+        "This session runs approximately 1.5 hours: 4 scenarios → survey → open discussion."
+      ],
+      "ground_rules": [
+        "There are no right or wrong answers",
+        "Please think aloud as you work through the tasks",
+        "All feedback is confidential and anonymised",
+        "You may stop or skip any task at any time"
+      ],
+      "side_panel": {
+        "type": "quote",
+        "text": "Your feedback will shape the future of healthcare in Brunei."
+      }
+    },
+
+    {
+      "type":       "two_column_check",
+      "section":    "02 — Purpose",
+      "title":      "Session Purpose & Structure",
+      "subtitle":   "What this session is — and is not — designed to evaluate",
+      "background": "white",
+      "left": {
+        "title":       "✅  IN SCOPE",
+        "color":       [39, 174, 96],
+        "light_color": "green",
+        "marker":      "✓",
+        "items": [
+          "Usability and discoverability of the AI feature",
+          "Clarity and helpfulness of AI-generated responses",
+          "Task completion ease and user confidence",
+          "Perceived usefulness and relevance of BruAI",
+          "Trust and comfort with the AI assistant",
+          "Overall user experience across the 4 scenarios"
+        ]
+      },
+      "right": {
+        "title":       "🚫  OUT OF SCOPE",
+        "color":       [231, 76, 60],
+        "light_color": "red",
+        "marker":      "✗",
+        "items": [
+          "Clinical accuracy or medical validation",
+          "Personalised medical advice or diagnosis",
+          "Real patient data (test accounts only)",
+          "System performance benchmarking",
+          "Comparison with other health apps",
+          "Final product assessment (POC stage only)"
+        ]
+      }
+    },
+
+    {
+      "type":       "cards_grid",
+      "section":    "03 — Objectives",
+      "title":      "Focus Group Objectives",
+      "background": "blue",
+      "cards": [
+        { "num": "01", "text": "Gather actionable insights on user interaction with the BruAI medication assistant" },
+        { "num": "02", "text": "Evaluate usability and intuitiveness of AI-powered medication features" },
+        { "num": "03", "text": "Assess discoverability — can users find and access the chatbot naturally?" },
+        { "num": "04", "text": "Observe real user interactions across diverse medication workflows" },
+        { "num": "05", "text": "Gather qualitative feedback on experience, friction points, and improvements" },
+        { "num": "06", "text": "Assess perceived value of AI medication guidance among healthcare staff" }
+      ]
+    },
+
+    {
+      "type":       "criteria_rows",
+      "section":    "04 — Measuring",
+      "title":      "What We Are Measuring",
+      "subtitle":   "Feedback collected via structured survey at the end of each scenario",
+      "background": "blue",
+      "footnote":   "Survey rating scales: 1–5 for usability · 0–10 for satisfaction & likelihood",
+      "criteria": [
+        { "num": "01", "label": "DISCOVERABILITY",  "text": "Ease of finding and accessing the AI feature within BruHealth" },
+        { "num": "02", "label": "TASK COMPLETION",  "text": "Ease of completing tasks through the BruAI chatbot" },
+        { "num": "03", "label": "RESPONSE QUALITY", "text": "Usefulness, clarity, and relevance of AI-generated responses" },
+        { "num": "04", "label": "SATISFACTION",     "text": "General satisfaction and likelihood to use BruAI regularly" }
+      ]
+    },
+
+    {
+      "type":     "section_divider",
+      "num":      "02",
+      "title":    "BruAI AI Assistant",
+      "bg_color": [1, 18, 30]
+    },
+
+    {
+      "type":       "scope_tiers",
+      "section":    "05 — AI Scope",
+      "title":      "BruAI Scope at a Glance",
+      "subtitle":   "How the AI responds to different types of questions",
+      "background": "blue",
+      "tiers": [
+        {
+          "color":   [39, 174, 96],
+          "icon":    "🟢",
+          "label":   "IN SCOPE — AI will answer",
+          "desc":    "Medication information, logging medications, drug interactions, storage & disposal",
+          "example": "e.g. \"What is Omeprazole for?\"  ·  \"Log my new medication\"  ·  \"Can I take Panadol with Ibuprofen?\""
+        },
+        {
+          "color":   [230, 184, 0],
+          "icon":    "🟡",
+          "label":   "SOFT OUT-OF-SCOPE — AI will acknowledge and redirect",
+          "desc":    "Dose adjustments, substitutions, pregnancy & breastfeeding considerations",
+          "example": "e.g. \"Can I take a higher dose?\"  ·  \"Is there a cheaper alternative?\""
+        },
+        {
+          "color":   [231, 76, 60],
+          "icon":    "🔴",
+          "label":   "HARD OUT-OF-SCOPE — AI will decline and explain why",
+          "desc":    "Diagnosis, prescribing, medical procedures, legal advice, insurance",
+          "example": "e.g. \"Do I have diabetes?\"  ·  \"Prescribe me something for my pain\""
+        },
+        {
+          "color":   [192, 57, 43],
+          "icon":    "🆘",
+          "label":   "RED FLAG — AI will escalate immediately",
+          "desc":    "Medical emergency → Call 999   ·   Mental health crisis → Talian Harapan 145",
+          "example": "e.g. \"I took too many pills\"  ·  \"I want to harm myself\""
+        }
+      ]
+    },
+
+    {
+      "type":       "two_panel",
+      "section":    "06 — Notices",
+      "title":      "AI Disclaimer & Data Privacy",
+      "background": "white",
+      "panels": [
+        {
+          "color": [224, 96, 32],
+          "icon":  "⚠️",
+          "title": "AI DISCLAIMER",
+          "items": [
+            "BruAI provides general information only — NOT personalised medical advice",
+            "This is a Proof-of-Concept — NOT intended for clinical decisions",
+            "AI responses may not be 100% accurate — always consult a healthcare professional",
+            "Moderators are present — raise your hand if any AI response causes concern"
+          ]
+        },
+        {
+          "color": [0, 118, 179],
+          "icon":  "🔒",
+          "title": "DATA PRIVACY",
+          "items": [
+            "Test accounts only — no real patient data is involved in this session",
+            "All feedback is anonymised and used for research purposes only",
+            "Observations are confidential and not linked to individual identities",
+            "Participation is voluntary — you may stop at any time with no consequence"
+          ]
+        }
+      ]
+    },
+
+    {
+      "type":       "two_column_steps",
+      "section":    "07 — Safety",
+      "title":      "Handling Unsafe or Incorrect AI Responses",
+      "background": "blue",
+      "columns": [
+        {
+          "title": "🖐  During the Focus Group",
+          "steps": [
+            { "bold": "Do NOT act on the response",          "normal": "if it seems incorrect or potentially harmful" },
+            { "bold": "Raise your hand",                     "normal": "to inform the moderator immediately" },
+            { "bold": "Moderator will note the incident",    "normal": "and guide you to continue the session" },
+            { "bold": "No further action required",          "normal": "from you — just flag it" }
+          ]
+        },
+        {
+          "title": "📲  After the Focus Group",
+          "steps": [
+            { "bold": "Take a screenshot",                   "normal": "of the incorrect or unsafe AI response" },
+            { "bold": "Send to the EVYD WhatsApp group",     "normal": "MOH × EVYD AI Feedback Group" },
+            { "bold": "Tag the relevant team member",        "normal": "for follow-up and review" },
+            { "bold": "Include a brief note",                "normal": "what happened, when, and the scenario you were in" }
+          ]
+        }
+      ],
+      "warning": "⚠️  Do not use or share any AI response you believe to be incorrect, harmful, or clinically inappropriate."
+    },
+
+    {
+      "type":     "section_divider",
+      "num":      "03",
+      "title":    "Today's Scenarios & Survey",
+      "bg_color": [4, 22, 30]
+    },
+
+    {
+      "type":       "scenario_cards",
+      "section":    "08 — Scenarios",
+      "title":      "AI POC Scope — 4 Scenarios",
+      "subtitle":   "Each scenario is moderated · Think aloud as you interact with BruAI",
+      "background": "blue",
+      "scenarios": [
+        {
+          "num":   "01",
+          "icon":  "💊",
+          "title": "Logging a New Medication",
+          "desc":  "Add a new medication to BruHealth via photo capture or manual entry. Review the AI-generated medication card and check all details.",
+          "tag":   "Medication Log"
+        },
+        {
+          "num":   "02",
+          "icon":  "🔍",
+          "title": "Inquiring About Medication Usage",
+          "desc":  "Ask BruAI about Omeprazole — what it is used for, how to take it, and any important precautions to be aware of.",
+          "tag":   "Medication Info"
+        },
+        {
+          "num":   "03",
+          "icon":  "⚠️",
+          "title": "Medication Guidance (OTC Safety Check)",
+          "desc":  "Check whether an over-the-counter remedy is safe to take alongside your current medications.",
+          "tag":   "Safety Check"
+        },
+        {
+          "num":   "04",
+          "icon":  "🗑️",
+          "title": "Storage & Disposal Guidance",
+          "desc":  "Ask BruAI how to safely store your medication at home and how to dispose of it responsibly when it expires.",
+          "tag":   "Storage & Disposal"
+        }
+      ]
+    },
+
+    {
+      "type":       "survey",
+      "section":    "09 — Survey",
+      "title":      "How to Submit the Survey",
+      "subtitle":   "Complete after all 4 scenarios · Takes approximately 5–7 minutes",
+      "background": "white",
+      "steps": [
+        { "title": "Open the Survey Link",  "desc": "Scan the QR code on the right, or open the link shared by your moderator on the day" },
+        { "title": "Answer Each Section",   "desc": "Complete all 4 scenario sections based on your experience during the session" },
+        { "title": "Use the Rating Scales", "desc": "1–5 for usability and ease · 0–10 for satisfaction and likelihood to use" },
+        { "title": "Submit and Confirm",    "desc": "Submit the form and inform your moderator — they will record your completion" }
+      ],
+      "qr_label": "SURVEY QR CODE",
+      "qr_note":  "(Link provided on the day)",
+      "qr_hint":  "Moderator will circulate\nto assist with submission"
+    },
+
+    {
+      "type":     "ending",
+      "title":    "Thank You for Participating",
+      "subtitle": "You are now free to interact with BruAI directly — explore beyond the 4 scenarios.",
+      "actions": [
+        { "icon": "🔓", "title": "Explore Freely",  "desc": "Ask BruAI anything related to medication — try topics beyond the 4 scenarios." },
+        { "icon": "💬", "title": "Think Aloud",     "desc": "Tell us what you notice as you interact — what surprises you, what feels natural." }
+      ]
+    }
+
+  ]
+}

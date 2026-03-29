@@ -16,6 +16,7 @@
 产品需求 → 用户故事 + AC → Figma 线框图脚本 → 低保真原型
                               ↓
                         User Manual（用户手册）
+产品内容 → PPT 内容 JSON → EVYD Aptos 幻灯片（可编辑 .pptx）
 医疗 AI 概念 → 意图分类 → 范围边界规范
 产品路线图想法 → 飞书多维表沉淀 → 重复检查 → startMonth 排期
 ```
@@ -30,6 +31,37 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 ## 技能列表
 
 ### evyd- 系列（团队工具）
+
+### 0. EVYD PPT 生成器 (PPT Generator)
+
+**目录**：`evyd-ppt-generator/`
+
+将内容 JSON 文件渲染为原生可编辑的 EVYD 品牌 PPTX 演示文稿。所有幻灯片均为真实形状和文本框（可在 PowerPoint 中编辑），非截图。
+
+**架构**：内容（JSON）/ 风格（预设）/ 渲染器（固定代码）三层分离——模型只需生成 content.json（约 400 tokens/15 张幻灯片），换风格改一行字，无需重新生成代码。
+
+**触发词**：`生成PPT`、`做幻灯片`、`演示文稿`、`ppt generator`、`EVYD ppt`
+
+**可用幻灯片类型**：`cover` / `agenda` / `section_divider` / `bullets_with_panel` / `two_column_check` / `cards_grid` / `criteria_rows` / `scope_tiers` / `two_panel` / `two_column_steps` / `scenario_cards` / `survey` / `ending`
+
+**可用风格预设**：`evyd_blue`（默认）/ `evyd_white`（适合打印）/ `evyd_teal`（高对比度）
+
+**用法**：
+```bash
+cd "evyd-ppt-generator"
+python gen_pptx.py content.json --output output.pptx
+```
+
+**示例文件**：`examples/bruai-focusgroup.json`（MOH BruAI Focus Group 完整 15 张幻灯片）
+
+**核心文件**：
+- `SKILL.md` — 完整 JSON schema 文档 + 扩展指南
+- `gen_pptx.py` — 通用渲染器（固定，不重新生成）
+- `styles.py` — 风格预设（添加新风格只需新增一个 dict）
+- `examples/` — 示例 content.json 文件
+
+---
+
 
 ### 1. 竞品调研 (Competitor Research)
 
@@ -169,6 +201,35 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 
 ---
 
+### 8. PPT 生成器 (PPT Generator)
+
+**目录**：`evyd-ppt-generator/`
+
+从内容 JSON 生成 EVYD 品牌风格的 PPTX 演示文稿，使用 EVYD Aptos 模板，输出真实可编辑的形状和文字（非截图）。
+
+**适用场景**：内部汇报、客户提案、MOH 演讲、焦点小组等
+
+**架构**：
+```
+content.json（模型生成，约 400 tokens / 15 页）
+    → gen_pptx.py + styles.py（固定渲染器，不重新生成）
+    → .pptx（PowerPoint 可直接编辑）
+```
+
+**支持的幻灯片类型**：`cover` / `agenda` / `section_divider` / `bullets_with_panel` / `two_column_check` / `cards_grid` / `criteria_rows` / `scope_tiers` / `two_panel` / `two_column_steps` / `scenario_cards` / `survey` / `ending`
+
+**内置样式**：`evyd_blue`（默认）/ `evyd_white` / `evyd_teal`
+
+**触发词**：`生成PPT`、`做幻灯片`、`演示文稿`、`EVYD ppt`
+
+**核心文件**：
+- `SKILL.md` — 完整 JSON schema 与 workflow
+- `gen_pptx.py` — 渲染器
+- `styles.py` — 样式预设
+- `examples/` — 示例 JSON
+
+---
+
 ### ned- 系列（个人效率工具）
 
 > 以下技能绑定 Ned 的 Obsidian 本地知识库路径，不适用于其他用户直接使用。
@@ -233,6 +294,7 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 
 [医疗 AI 意图架构师] — 独立使用，AI 产品规划阶段
 [PD 路线图作业台] — 独立使用，路线图维护 / 去重 / 排期
+[PPT 生成器] — 独立使用，从内容 JSON 生成 EVYD 品牌 PPTX
 ```
 
 ## 项目结构
@@ -240,6 +302,11 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 ```
 技能 skills 作坊/
 ├── README.md
+├── evyd-ppt-generator/             # EVYD PPT 生成器（JSON → 原生可编辑 PPTX）
+│   ├── SKILL.md
+│   ├── gen_pptx.py
+│   ├── styles.py
+│   └── examples/bruai-focusgroup.json
 ├── evyd-output-channels/           # 输出渠道 skill（Active Config + 4 个渠道协议）
 │   ├── SKILL.md
 │   └── references/
@@ -262,6 +329,11 @@ Obsidian 日报 + 工作思考 + 会议纪要 → [周报生成器] → Obsidian
 │   ├── SKILL.md
 │   ├── references/
 │   └── scripts/
+├── evyd-ppt-generator/            # PPT 生成器
+│   ├── SKILL.md
+│   ├── gen_pptx.py
+│   ├── styles.py
+│   └── examples/
 ├── ned-daily-working-report/       # 每日工作报告生成器（个人）
 │   ├── SKILL.md
 │   ├── assets/template.md
