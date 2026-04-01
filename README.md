@@ -14,8 +14,8 @@
 市场/竞品 → 竞品调研报告（飞书）
                   ↓
 产品需求 → 用户故事 + AC → Figma 线框图脚本 → 低保真原型
-                              ↓
-                        User Manual（用户手册）
+                              ↓                        ↓
+                        User Manual（用户手册）   设计评审（用户视角反馈 + Heuristic 评分）
 产品内容 → PPT 内容 JSON → EVYD Aptos 幻灯片（可编辑 .pptx）
 医疗 AI 概念 → 意图分类 → 范围边界规范
 产品路线图想法 → 飞书多维表沉淀 → 重复检查 → startMonth 排期
@@ -187,7 +187,33 @@ python gen_pptx.py content.json --output output.pptx
 
 ---
 
-### 7. 输出渠道配置 (Output Channels)
+### 7. 设计评审 (Design Review)
+
+**目录**：`evyd-design-review/`
+
+以非技术普通用户视角评审 Figma 设计，输出第一人称用户反馈报告，并对照 EVYD UX & Visual Design Heuristic Rating Sheet 逐条评分。
+
+**适用场景**：设计师完成 Figma 设计后，想在进入开发前获得真实用户会遇到的困惑和障碍
+
+**输入**：Figma 链接（Prototype 或设计稿）或截图，指定目标用户角色
+
+**支持角色**：医生 / 护士 / 患者 / 管理员（各有独立背景设定与思维方式）
+
+**输出**：
+- 第一人称用户反馈（口语化中文，无设计术语）：第一眼印象、任务路径、困惑点、亮点、总结
+- Heuristic 评分对照：对照 10 条 EVYD UX 维度，逐条标注状态与一行观察
+
+**触发词**：`设计评审`、`design review`、`帮我看看这个设计`、`用户视角看设计`、`站在用户角度`
+
+**核心文件**：
+- `SKILL.md` — 主流程
+- `references/personas.md` — 4 个用户角色背景设定
+- `references/feedback-template.md` — 反馈报告结构模板（含 Heuristic 评分对照）
+- `references/heuristics.md` — EVYD UX & Visual Design Heuristic Rating Sheet（10 条维度）
+
+---
+
+### 8. 输出渠道配置 (Output Channels)
 
 **目录**：`evyd-output-channels/`
 
@@ -290,7 +316,9 @@ content.json（模型生成，约 400 tokens / 15 页）
         ↓
 5. 设计师粘贴提示词，在 Figma Make 生成低保真线框图
         ↓
-6. 进入视觉设计和开发阶段
+6. 视觉设计完成后 → [设计评审] 用户视角反馈 + Heuristic 评分
+        ↓
+7. 进入开发阶段
 
 [医疗 AI 意图架构师] — 独立使用，AI 产品规划阶段
 [PD 路线图作业台] — 独立使用，路线图维护 / 去重 / 排期
@@ -325,6 +353,9 @@ content.json（模型生成，约 400 tokens / 15 页）
 ├── evyd-user-story-writer/         # 用户故事编写器
 │   ├── SKILL.md
 │   └── EVYD-User-Story-Template.md
+├── evyd-design-review/             # 设计评审（用户视角 + Heuristic 评分）
+│   ├── SKILL.md
+│   └── references/
 ├── evyd-pd-roadmap/               # PD 路线图作业台
 │   ├── SKILL.md
 │   ├── references/
