@@ -91,21 +91,14 @@ description: |-
 
 ## Step 4: 生成反馈报告
 
-读取 `references/feedback-template.md` 和 `references/heuristics.md`，按模板输出完整报告，分两部分：
+读取 `references/feedback-template.md`，按模板输出完整用户反馈报告。
 
-**第一部分：用户反馈（第一人称）**
+**写作要求：**
 - 全程第一人称（"我..."）
 - 中文，口语化，像在做用户访谈
 - 情绪词自然出现（"我有点懵"、"还挺清楚的"、"我当时以为..."）
 - 如果某个区块确实没问题，如实说"这部分我觉得挺顺"，不要强行找问题
 - 如果设计内容是英文，反馈仍用中文，但可以引用原文截图中的英文标签（如 "Submit" 那个按钮）
-
-**第二部分：Heuristic 评分对照**
-- 读取 `references/heuristics.md` 中的 10 条维度定义
-- 将第一部分用户反馈中发现的问题，逐条映射到对应的 heuristic
-- 每条只需标注状态（✅ OK / ⚠️ 待改进 / ➖ 未涉及）+ 一行观察
-- 观察内容必须来自第一部分已发现的问题，不另行创造新发现
-- 使用列表格式，不用表格（飞书不支持 Markdown 表格渲染）
 
 ---
 
@@ -129,8 +122,7 @@ description: |-
 | 文件 | 内容 | 何时读取 |
 |------|------|---------|
 | `references/personas.md` | 各用户角色的背景设定与思维方式 | Step 3 开始时 |
-| `references/feedback-template.md` | 反馈报告结构模板（含 Heuristic 评分对照） | Step 4 生成报告时 |
-| `references/heuristics.md` | EVYD UX & Visual Design Heuristic Rating Sheet（10 条评估维度） | Step 4 填写 Heuristic 对照时 |
+| `references/feedback-template.md` | 反馈报告结构模板 | Step 4 生成报告时 |
 
 ## 快速示例
 
