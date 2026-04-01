@@ -1,0 +1,11 @@
+{
+  "name": "evyd-skills",
+  "version": "0.1.0",
+  "description": "EVYD product team skills — competitive research, user stories, Figma wireframes, design review, PPT generation, roadmap management, and Ned's personal daily/weekly report tools.",
+  "author": {
+    "name": "Ned (Li Zhao)",
+    "email": "li.zhao.86@gmail.com"
+  },
+  "repository": "https://github.com/lizhao86/evyd-skills-made-by-Ned",
+  "keywords": ["evyd", "product-management", "design", "pptx", "user-stories", "roadmap"]
+}
