@@ -13,7 +13,7 @@
 ```
 市场/竞品 → 竞品调研报告（飞书）
                   ↓
-产品需求（零散输入）→ [需求拆解器] Requirement Ticket（Y Model + UC + Story Scope + Dependency）
+产品需求（零散输入）→ [需求拆解器] Requirement Ticket（Y Model + UC + Feature Scope + Dependency）
                                               ↓
                               [用户故事编写器] → 用户故事 + AC → Figma 线框图脚本 → 低保真原型
                                                                       ↓                        ↓
@@ -136,10 +136,11 @@ python gen_pptx.py content.json --output output.pptx
 - **WHAT**：用户场景分析
 - **WHY**：业务目标与用户动机
 - **HOW**：
-  - **Use Cases**：用户旅程 + 功能边界定义表格
-  - **User Story Scope**：产品与技术功能清单（直接作为 `/evyd-user-story-writer` 的输入）
+  - **Use Cases**：用户旅程 + 功能边界定义表格，Module Legend 内嵌在各 UC 中
+  - **Feature Scope**：产品与技术功能清单（采用 Fxx 编号，直接作为 `/evyd-user-story-writer` 的输入）
   - **Dependency Scope**：跨团队协作 TODO，含时机标注（前置 / 可并行 / 上线后）
 - **Clarifying Questions**：针对未确认假设的追问
+- **Notes**：实现假设、边界说明、补充备注
 
 **触发词**：`需求拆解`、`requirement breakdown`、`帮我整理需求`、`做个 requirement doc`
 
@@ -364,7 +365,7 @@ content.json（模型生成，约 400 tokens / 15 页）
         ↓
 2. 描述产品需求
         ↓
-2.5 [需求拆解器] 生成 Requirement Ticket（Y Model + UC + Story Scope + Dependency）
+2.5 [需求拆解器] 生成 Requirement Ticket（Y Model + UC + Feature Scope + Dependency）
         ↓
 3. [用户故事编写器] 生成用户故事 + 验收标准
         ↓
