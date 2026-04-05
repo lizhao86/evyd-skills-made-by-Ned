@@ -27,8 +27,8 @@ const args    = process.argv.slice(2);
 const jsonArg = args.find(a => !a.startsWith("--"));
 if (!jsonArg) { console.error("Usage: node gen_free.js <content.json> [--style NAME] [--output PATH]"); process.exit(1); }
 
-const styleArg  = args[args.indexOf("--style")  + 1] || null;
-const outputArg = args[args.indexOf("--output") + 1] || null;
+const _si = args.indexOf("--style");  const styleArg  = _si  !== -1 ? args[_si  + 1] : null;
+const _oi = args.indexOf("--output"); const outputArg = _oi !== -1 ? args[_oi + 1] : null;
 
 // ── Load content
 const content = JSON.parse(fs.readFileSync(jsonArg, "utf8"));

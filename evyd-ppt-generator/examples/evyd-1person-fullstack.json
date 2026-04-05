@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "AI时代的1人全栈产品团队",
+    "free_style": "dark_navy",
+    "output": "/Users/Li.ZHAO/Desktop/EVYD-1人全栈团队课题.pptx"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "AI时代的 1 人全栈产品团队",
+      "subtitle": "闭环工作流课题 · EVYD Technology"
+    },
+    {
+      "type": "bullets_with_panel",
+      "section": "01 — 背景与命题",
+      "title": "一个人，能跑完整个产品生命周期吗？",
+      "background": "blue",
+      "bullets": [
+        "过去：产品从需求到上线，需要产品经理、设计师、研发、测试、项目经理、数据分析师——六七个角色、几十道流程、几个月时间",
+        "EVYD 深耕医疗健康数字化，产品部署于文莱与东南亚——团队精干，每人都需要极强的跨职能能力",
+        "现在：AI 大模型正在重新定义这件事——一个人独立跑通从需求洞察到数据回收的完整闭环，不是科幻，是我们正在攻克的核心命题"
+      ],
+      "side_panel": {
+        "type": "quote",
+        "text": "AI 工具不是替代人，而是让一个优秀的人变成一支团队。"
+      }
+    },
+    {
+      "type": "scope_tiers",
+      "section": "02 — 七环节全链路",
+      "title": "从需求到数据：AI 赋能的全链路闭环",
+      "subtitle": "七个环节，覆盖完整产品生命周期",
+      "background": "blue",
+      "tiers": [
+        {
+          "color": [39, 174, 96],
+          "icon": "🔍",
+          "label": "洞察 DISCOVER — 需求分析",
+          "desc": "AI Agent 自动整理用户反馈、竞品信息与历史数据，几小时内生成结构化需求文档",
+          "example": "传统 2–3 周 → AI 赋能后几小时"
+        },
+        {
+          "color": [52, 152, 219],
+          "icon": "📐",
+          "label": "设计 DESIGN — 产品设计 · UI 原型",
+          "desc": "AI 辅助写 User Story 与 AC，Figma 加 AI 生成 LoFi 线框图，快速验证交互逻辑",
+          "example": "设计师 3 天工作量 → 半天出 3 套方案"
+        },
+        {
+          "color": [230, 126, 34],
+          "icon": "⚙️",
+          "label": "构建 BUILD — 研发 · 测试",
+          "desc": "Cursor 等 AI 编程工具让代码产出速度翻倍；AI 自动生成测试用例，AI 测 AI 评估质量",
+          "example": "e.g. IAT 意图接受测试 · 自动化回归测试"
+        },
+        {
+          "color": [155, 89, 182],
+          "icon": "📊",
+          "label": "运营 OPERATE — 项目管理 · 数据分析",
+          "desc": "AI 从会议记录自动提炼 Action Items 并更新 Jira；AI 驱动用户行为分析与 A/B test 解读",
+          "example": "e.g. 自动周报 · AI 可视化驱动产品决策"
+        }
+      ]
+    },
+    {
+      "type": "two_column_steps",
+      "section": "03 — 七环节详解",
+      "title": "每一环节：真实 EVYD 案例驱动",
+      "background": "blue",
+      "columns": [
+        {
+          "title": "🔍  洞察 → 设计",
+          "steps": [
+            { "bold": "需求分析", "normal": "临床医生访谈录音直接提炼产品需求，效率提升 5 倍（文莱 HSD 项目）" },
+            { "bold": "产品设计", "normal": "AI 写 User Story + Acceptance Criteria，自动关联 Jira Ticket" },
+            { "bold": "UI 原型", "normal": "Figma + AI 生成 LoFi 线框，在 EVYD 真实设计系统上快速验证" },
+            { "bold": "研发", "normal": "Cursor / CodeX 加速代码交付；产品经理也能用自然语言写可运行原型" }
+          ]
+        },
+        {
+          "title": "🧪  构建 → 增长",
+          "steps": [
+            { "bold": "测试", "normal": "AI 自动生成测试用例、执行回归测试、输出缺陷报告" },
+            { "bold": "AI 测 AI", "normal": "标准化测试集自动评估 AI 回答质量（IAT 意图接受测试范式）" },
+            { "bold": "项目管理", "normal": "会议记录 → Action Items → Jira 自动更新，项目透明度大幅提升" },
+            { "bold": "数据分析", "normal": "AI 做用户行为分析与 A/B test 解读，让每个产品决策都有数据支撑" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "criteria_rows",
+      "section": "04 — 课题交付物",
+      "title": "结束时，你手上有这些真实作品",
+      "subtitle": "不是课堂作业——每一项都能放进简历",
+      "background": "blue",
+      "criteria": [
+        { "num": "01", "label": "产品需求文档 PRD", "text": "真实可用的结构化需求文档，含 User Story、AC 与优先级分析" },
+        { "num": "02", "label": "Figma 完整原型", "text": "基于 EVYD 真实设计系统的完整交互原型，经用户验证迭代" },
+        { "num": "03", "label": "AI 辅助测试方案", "text": "覆盖 IAT 意图测试的可运行测试集与自动化质量评估报告" },
+        { "num": "04", "label": "数据分析报告", "text": "基于真实业务数据的用户行为分析与产品改进建议" }
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "欢迎加入 EVYD，一起探索 AI 时代的新型团队",
+      "subtitle": "1 人全栈 × 闭环工作流 × AI 赋能产品人",
+      "actions": [
+        { "icon": "🛠", "title": "动手即研究", "desc": "在真实医疗科技环境里跑完完整产品生命周期，产出落地 EVYD 真实业务" },
+        { "icon": "🌐", "title": "跨专业欢迎", "desc": "不要求样样精通，需要好奇心、行动力与打破专业边界的勇气" },
+        { "icon": "🎓", "title": "导师每周陪跑", "desc": "EVYD 产品与技术团队资深成员一对一指导，确保真实学习产出" }
+      ]
+    }
+  ]
+}
